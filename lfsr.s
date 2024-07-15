@@ -24,8 +24,8 @@ LDA #$4000
 STA lfsr
 
 loop:
-LDA #$0003 ; mask for bottom 2 bits
-AND lfsr   ; bottom 2 bits of lfsr are now in accum
+AND #$0003  ; mask for bottom 2 bits
+            ; bottom 2 bits of lfsr are now in accum
 TAX
 LDA xor_table, X    ; accum now contains XOR result
 ROR                 ; XOR result now in carry flag
